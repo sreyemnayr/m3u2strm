@@ -14,9 +14,9 @@ RUN dos2unix create_crontab.sh || true
 
 RUN chmod +x ./create_crontab.sh
 
-RUN chmod -R +rw /app/logs
-
 RUN ./create_crontab.sh
+
+RUN chmod -R +rw /app/logs
 
 ENV CRONTAB_SCHEDULE="*/30 * * * *"
 ENV MEDIA_PATH="/media"
