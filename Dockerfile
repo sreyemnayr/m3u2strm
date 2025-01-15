@@ -11,7 +11,7 @@ RUN pip install -r requirements.txt
 ENV CRONTAB_SCHEDULE="*/30 * * * *"
 ENV MEDIA_PATH="/media"
 
-RUN chmod +x create_crontab.sh
+RUN chmod +x ./create_crontab.sh
 
 RUN ./create_crontab.sh
 
