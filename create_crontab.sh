@@ -1,6 +1,7 @@
-#! /bin/bash
+#! /bin/sh
 
 cd /app
+mkdir -p /app/logs
 echo "CRONTAB_SCHEDULE: $CRONTAB_SCHEDULE"
 echo "$CRONTAB_SCHEDULE export PYTHONPATH=/app && python /app/main.py >> /app/logs/cron.log 2>&1" > crontab
 crontab crontab

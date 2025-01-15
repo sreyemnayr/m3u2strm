@@ -6,13 +6,17 @@ RUN python -m pip install --upgrade pip
 
 COPY . .
 
+RUN apk add --no-cache bash
+
 RUN pip install -r requirements.txt
 
-ENV CRONTAB_SCHEDULE="*/30 * * * *"
-ENV MEDIA_PATH="/media"
+RUN dos2unix create_crontab.sh || true
 
 RUN chmod +x ./create_crontab.sh
 
 RUN ./create_crontab.sh
+
+ENV CRONTAB_SCHEDULE="*/30 * * * *"
+ENV MEDIA_PATH="/media"
 
 CMD ["crond", "-f"]
