@@ -19,3 +19,7 @@ tvshows-ipt/
 tvshows1/
 main2.py
 .env
+media/
+.vscode/
+.DS_Store
+.python-version
